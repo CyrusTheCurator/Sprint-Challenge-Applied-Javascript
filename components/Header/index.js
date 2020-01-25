@@ -28,8 +28,6 @@ function Header() {
   date.textContent = "SMARCH 28, 2019";
   title.textContent = "Lambda Times";
   temperature.textContent = "98°";
-  console.log("header is ", header);
-  console.log("header container is ", headerContainer);
   return headerContainer.appendChild(header);
 }
 
