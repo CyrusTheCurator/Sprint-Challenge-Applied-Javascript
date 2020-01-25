@@ -45,6 +45,7 @@ let carouselComponent = arr => {
 
   leftButton.textContent = "<";
   rightButton.textContent = ">";
+
   let i = 0;
   imagesSelectors[i].style.display = "block";
   rightButton.addEventListener("click", event => {
@@ -60,13 +61,15 @@ let carouselComponent = arr => {
 
   leftButton.addEventListener("click", event => {
     let currentImage = imagesSelectors[i];
-    currentImage.style.display = "none";
     i--;
     if (i < 0) {
       console.log("i is going to reset because it is ", i);
       i = imagesSelectors.length - 1;
     }
     let nextImage = imagesSelectors[i];
+
+    currentImage.style.display = "none";
+
     nextImage.style.display = "block";
   });
 
