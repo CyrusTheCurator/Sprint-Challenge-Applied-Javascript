@@ -17,3 +17,38 @@
     <div class="right-button"> > </div>
   </div>
 */
+// let carouselContainer = document.querySelector(".carousel-container");
+
+// let carouselComponent = () => {
+//   let carousel = document.createElement("div");
+//   let leftButton = document.createElement("div");
+//   let rightButton = document.createElement("div");
+//   let img1 = document.createElement("img");
+//   let img2 = document.createElement("img");
+//   let img3 = document.createElement("img");
+//   let img4 = document.createElement("img");
+
+//   carousel.classList.add(".carousel");
+//   leftButton.classList.add(".left-button");
+//   rightButton.classList.add(".right-button");
+
+//   img1.src = "./assets/carousel/mountains.jpeg";
+//   img2.src = "./assets/carousel/computer.jpeg";
+//   img3.src = "./assets/carousel/trees.jpeg";
+//   img4.src = "./assets/carousel/turntable.jpeg";
+//   leftButton.textContent = "<";
+//   rightButton.textContent = ">";
+
+//   carousel.appendChild(leftButton);
+//   carousel.appendChild(img1);
+//   carousel.appendChild(img2);
+//   carousel.appendChild(img3);
+//   carousel.appendChild(img4);
+//   carousel.appendChild(rightButton);
+//   console.log("carousel is ", carousel);
+//   console.log("carousel container is ", carouselContainer);
+
+//   return carousel;
+// };
+// console.log(carouselContainer);
+// carouselContainer.appendChild(carouselComponent());
