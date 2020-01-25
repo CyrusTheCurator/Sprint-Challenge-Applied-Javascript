@@ -24,7 +24,6 @@ axios
   .get("https://lambda-times-backend.herokuapp.com/topics")
   .then(obj => {
     let topicsArray = obj.data.topics;
-    console.log(topicsArray);
     topicsArray.forEach(element => {
       topics.appendChild(tabComponent(element));
     });

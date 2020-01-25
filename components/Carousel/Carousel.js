@@ -17,38 +17,63 @@
     <div class="right-button"> > </div>
   </div>
 */
-// let carouselContainer = document.querySelector(".carousel-container");
 
-// let carouselComponent = () => {
-//   let carousel = document.createElement("div");
-//   let leftButton = document.createElement("div");
-//   let rightButton = document.createElement("div");
-//   let img1 = document.createElement("img");
-//   let img2 = document.createElement("img");
-//   let img3 = document.createElement("img");
-//   let img4 = document.createElement("img");
+let carouselContainer = document.querySelector(".carousel-container");
+let imagesArray = [
+  "./assets/carousel/mountains.jpeg",
+  "./assets/carousel/computer.jpeg",
+  "./assets/carousel/trees.jpeg",
+  "./assets/carousel/turntable.jpeg"
+];
 
-//   carousel.classList.add(".carousel");
-//   leftButton.classList.add(".left-button");
-//   rightButton.classList.add(".right-button");
+let carouselComponent = arr => {
+  let carousel = document.createElement("div");
+  let leftButton = document.createElement("div");
+  let rightButton = document.createElement("div");
 
-//   img1.src = "./assets/carousel/mountains.jpeg";
-//   img2.src = "./assets/carousel/computer.jpeg";
-//   img3.src = "./assets/carousel/trees.jpeg";
-//   img4.src = "./assets/carousel/turntable.jpeg";
-//   leftButton.textContent = "<";
-//   rightButton.textContent = ">";
+  let imagesSelectors = [];
+  arr.forEach(element => {
+    let img = document.createElement("img");
 
-//   carousel.appendChild(leftButton);
-//   carousel.appendChild(img1);
-//   carousel.appendChild(img2);
-//   carousel.appendChild(img3);
-//   carousel.appendChild(img4);
-//   carousel.appendChild(rightButton);
-//   console.log("carousel is ", carousel);
-//   console.log("carousel container is ", carouselContainer);
+    img.src = element;
+    imagesSelectors.push(img);
+    carousel.appendChild(img);
+  });
+  carousel.classList.add("carousel");
+  leftButton.classList.add("left-button");
+  rightButton.classList.add("right-button");
 
-//   return carousel;
-// };
-// console.log(carouselContainer);
-// carouselContainer.appendChild(carouselComponent());
+  leftButton.textContent = "<";
+  rightButton.textContent = ">";
+  let i = 0;
+  imagesSelectors[i].style.display = "block";
+  rightButton.addEventListener("click", event => {
+    let currentImage = imagesSelectors[i];
+    currentImage.style.display = "none";
+    i++;
+    if (i > imagesSelectors.length - 1) {
+      i = 0;
+    }
+    let nextImage = imagesSelectors[i];
+    nextImage.style.display = "block";
+  });
+
+  leftButton.addEventListener("click", event => {
+    let currentImage = imagesSelectors[i];
+    currentImage.style.display = "none";
+    i--;
+    if (i < 0) {
+      console.log("i is going to reset because it is ", i);
+      i = imagesSelectors.length - 1;
+    }
+    let nextImage = imagesSelectors[i];
+    nextImage.style.display = "block";
+  });
+
+  carousel.appendChild(leftButton);
+  carousel.appendChild(rightButton);
+
+  return carousel;
+};
+
+carouselContainer.appendChild(carouselComponent(imagesArray));

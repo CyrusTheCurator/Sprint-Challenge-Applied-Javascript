@@ -44,8 +44,6 @@ let cardComponent = data => {
   imgContainer.appendChild(authorImg);
   author.appendChild(authorName);
 
-  console.log("we are returning ", card);
-
   return card;
 };
 
