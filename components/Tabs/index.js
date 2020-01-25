@@ -22,8 +22,8 @@ let tabComponent = topic => {
 //requests array and calls component for each string in array
 axios
   .get("https://lambda-times-backend.herokuapp.com/topics")
-  .then(data => {
-    let topicsArray = data.data.topics;
+  .then(obj => {
+    let topicsArray = obj.data.topics;
     console.log(topicsArray);
     topicsArray.forEach(element => {
       topics.appendChild(tabComponent(element));
